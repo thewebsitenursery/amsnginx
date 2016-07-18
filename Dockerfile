@@ -29,7 +29,7 @@ ADD index.html /usr/share/nginx/html/
 
 # Create wsntunnel binary & deamon off nginx
 
-RUN touch "wsntunnel" >> /usr/local/bin/wsntunnel 
+RUN touch "wsntunnel" >> /usr/local/bin/wsntunnel
 RUN echo '#!/bin/sh' >> /usr/local/bin/wsntunnel
 RUN echo 'lt -s thewsn -p 80' >> /usr/local/bin/wsntunnel
 RUN chmod a+rx /usr/local/bin/wsntunnel
@@ -44,8 +44,8 @@ RUN npm install -g localtunnel
 
 #VOLUMES
 
-VOLUME ["/Users/alistairswodeck/Sites/webapps:/var/webapps"]
+VOLUME ["/home/alistair/webapps:/var/webapps"]
 
 # Expose port XX
 EXPOSE 5580 80 443
-CMD ["nginx"] ["-g"] ["deamon off"] 
+CMD ["nginx"] ["-g"] ["deamon off"]
